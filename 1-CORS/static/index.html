@@ -12,9 +12,12 @@
     var text = document.getElementsByTagName('p')[0];
     btn.addEventListener('click', function () {
         var xhr = new XMLHttpRequest();
+        // var url = 'http://localhost:3001?hello1=你好';    // 请求的3001端口获取数据
+        // xhr.open('GET', url);                 // 与3001端口建立一个连接
+        // xhr.send(null);                       // 发送给3001端口数据为空
         var url = 'http://localhost:3001';    // 请求的3001端口获取数据
-        xhr.open('GET', url);                 // 与3001端口建立一个连接
-        xhr.send(null);                       // 发送给3001端口数据为空
+        xhr.open('POST', url);                 // 与3001端口建立一个连接
+        xhr.send({name:'陈宏伟'});                       // 发送给3001端口数据为空
         xhr.onreadystatechange = () => {     // 请求状态改变后调用这个函数
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {  // 如果请求成功
                 text.innerHTML = xhr.response;

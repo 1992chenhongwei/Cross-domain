@@ -8,7 +8,8 @@
 <p>hello world</p>
 <script>
     function myFunction (data) {
-        alert('获取数据成功，2s后改变数据！')
+        // alert('获取数据成功，2s后改变数据！')
+        console.log(data)
         let p = document.getElementsByTagName('p')[0]
         setTimeout(function () {
             p.innerHTML = data.message
@@ -16,7 +17,7 @@
         // 2s后p标签内的内容将改变
     }
 </script>
-<script src="http://localhost:3001?callback=myFunction"></script>
+<script src="http://localhost:3001?callback11=myFunction"></script>
 <!--在src里面的问号？后面的参数({callback: 'myFunction'})可以在3001端口页面中可以通过req.query.callback获取-->
 </body>
 </html>
