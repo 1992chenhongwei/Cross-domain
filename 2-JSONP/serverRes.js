@@ -4,7 +4,7 @@ var app = express();
 var responsePort = 3001;
 
 app.get('/', function (req, res) {
-    var callbackName = req.query.callback11;   // myFunction
+    var callbackName = req.query.callback;   // myFunction
     console.log(callbackName)
     res.send(callbackName+"({'message': 'hello world from JSONP!🙃'});");
     // myFunction({'message': 'hello world from JSONP!'})
